@@ -20,7 +20,7 @@ public class Day13 {
         parse(tcfile, 1068773L);
         String wholefile = getDataAsOneString("data.txt");
 
-        parse(wholefile, 924556795459228L);
+        parse(wholefile, 1012171816130000L);
 
 //        Integer testCount = parse(tc);
 //
@@ -114,6 +114,18 @@ public class Day13 {
             diffs.add(Pair.of(Integer.valueOf(allBuses[i]), i - idxMaxBus));
         }
 
+        /**
+         * x=1012171816131177
+         * x ≡ 63 mod 19
+         * x ≡ 50 mod 37
+         * x ≡ 44 mod 599
+         * x ≡ 42 mod 29
+         * x ≡ 27 mod 17
+         * x ≡ 21 mod 23
+         * x ≡ 13 mod 761
+         * x ≡ 3 mod 41
+         * x ≡ 0 mod 13
+         */
 //        diffs.stream().forEach(Utils::log);
         long found = -1L;
         for (long l = firstdivisor; found < 0l; l = l + maxBusDir) {
@@ -132,7 +144,7 @@ public class Day13 {
 
             }
         }
-        log("My p2 is " + (found+diffs.get(diffs.size()-1).getRight()));
+        log("My p2 is " + (found+diffs.get(0).getRight()));
         log("---------------------------------");
 //        diffs = new ArrayList<>();
 //        for (int i = 0; i < allBuses.length; i++) {
